@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.vanniktech.android.javadoc'
+apply plugin: "org.wellijohn.androidwebp"
 
 android {
     compileSdkVersion 25

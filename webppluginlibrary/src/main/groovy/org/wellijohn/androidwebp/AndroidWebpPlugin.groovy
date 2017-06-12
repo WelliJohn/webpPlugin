@@ -1,17 +1,14 @@
-import org.gradle.api.Action
-import org.gradle.api.DefaultTask
-import org.gradle.api.Project
-import org.gradle.api.Task
+package org.wellijohn.androidwebp
 
-det TAG = "WelliJohn"
+import org.gradle.api.*
 
-class AndroidWebpPlugin implements Plugin<Project>{
+class AndroidWebpPlugin implements Plugin<Project> {
     void apply(Project project){
         project.android.applicationVariants.all{//拿到的是ApplicationVariant
             applicationVariant->applicationVariant.outputs.each{//拿到的是BaseVariantOutput
                 baseVariantOutput->
 
-                def webTask = project.task("webp"){
+                def webTask = project.task(type:WebpTask){
                     resourcesPath = applicationVariant.mergeResources.outputDir
                 }
 
@@ -23,7 +20,7 @@ class AndroidWebpPlugin implements Plugin<Project>{
     }
 
 
-    class WebTask extends DefaultTask{
+    class WebpTask extends DefaultTask{
         File resourcesPath;
 
         @Override
