@@ -16,7 +16,7 @@ buildscript {
     }
 }
 
-version = "1.0.0"    //配置插件的版本号
+version = "1.0.19"    //配置插件的版本号
 group = "org.wellijohn.androidwebpconvert"   //插件的群组，插件的classpath会用到
 
 pluginBundle {
